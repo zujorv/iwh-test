@@ -24,6 +24,7 @@ mongoose.connect('mongodb://localhost/iwhtest', function(err, res) {
   }
 });
 
-server.listen(3000, function() {
-    console.log("Node server running on http://localhost:3000");
+var port = Number(process.env.PORT || 5000);
+server.listen(port, function() {
+    console.log("Listening on " + port);
 });
