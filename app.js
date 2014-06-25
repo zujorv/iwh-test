@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
     res.send("App IWH - Test");
 });
 
-routes = require('./routes/iwhs')(app);
+routes = require('routes/iwhs')(app);
 
 mongoose.connect('mongodb://localhost/iwhtest', function(err, res) {
   if(err) {

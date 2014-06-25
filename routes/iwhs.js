@@ -30,10 +30,11 @@ module.exports = function(app) {
     console.log(req.body);
 
     var iwh = new IWHData({
-      user:   req.body.user,
-      label:  req.body.label,
-      lat:    req.body.lat,
-      lon:    req.body.lon
+      user:       req.body.user,
+      label:      req.body.label,
+      timestamp:  req.body.timestamp,
+      lat:        req.body.lat,
+      lon:        req.body.lon
     });
 
     iwh.save(function(err) {
@@ -50,10 +51,11 @@ module.exports = function(app) {
   //PUT - Update a register already exists
   updateIWH = function(req, res) {
     IWHData.findById(req.params.id, function(err, iwh) {
-      iwh.user  = req.body.user;
-      iwh.label = req.body.label;
-      iwh.lat   = req.body.lat;
-      iwh.lon   = req.body.lon;
+      iwh.user      = req.body.user;
+      iwh.label     = req.body.label;
+      iwh.timestamp = req.body.timestamp;
+      iwh.lat       = req.body.lat;
+      iwh.lon       = req.body.lon;
 
       iwh.save(function(err) {
         if(!err) {
