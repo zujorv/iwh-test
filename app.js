@@ -16,7 +16,9 @@ app.get('/', function(req, res) {
 
 routes = require('routes/iwhs')(app);
 
-mongoose.connect('mongodb://localhost/iwhtest', function(err, res) {
+var user = process.env.MONGO_USER;
+var pass = process.env.MONGO_PASS;
+mongoose.connect('mongodb://' + user + ':' + pass + '@ds031319.mongolab.com:31319/iwh-test', function(err, res) {
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
   } else {
