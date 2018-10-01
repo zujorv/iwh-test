@@ -20,7 +20,7 @@ var user = process.env.MONGO_USER;
 var pass = process.env.MONGO_PASS;
 mongoose.connect('mongodb://' + user + ':' + pass + '@ds031319.mongolab.com:31319/iwh-test', function(err, res) {
   if(err) {
-    console.log('ERROR: connecting to Database. ' + err);
+    console.log('ERROR: Failure connecting to Database. ' + err);
   } else {
     console.log('Connected to Database');
   }
