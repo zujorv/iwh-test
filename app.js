@@ -22,7 +22,7 @@ mongoose.connect('mongodb://' + user + ':' + pass + '@ds031319.mongolab.com:3131
   if(err) {
     console.log('ERROR: Failure connecting to Database. ' + err);
   } else {
-    console.log('Connected to Database');
+    console.log('Succesfully connected to Database');
   }
 });
 
